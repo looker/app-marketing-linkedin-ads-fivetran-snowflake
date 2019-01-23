@@ -16,17 +16,17 @@ view: li_campaign_stats {
   dimension: _date {
     hidden: yes
     type: date_raw
-    sql: CAST(${TABLE}.day AS DATE) ;;
+    sql: TO_DATE(${TABLE}.day AS) ;;
   }
 
   dimension: account_id_string {
     hidden: yes
-    sql: CAST(${account_id} AS STRING) ;;
+    sql: TO_CHAR(${account_id}) ;;
   }
 
   dimension: campaign_id_string {
     hidden: yes
-    sql: CAST(${campaign_id} AS STRING) ;;
+    sql: TO_CHAR(${campaign_id}) ;;
   }
 
   dimension: _fivetran_synced {
